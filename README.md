@@ -8,6 +8,6 @@
 
 ## "Estatisticamente reprodutível" (LATEV Mar/2017)
 
-[Palestra "Estatisticamente reprodutível"][]
+[Seminário "Estatisticamente reprodutível"][]
 
-[Palestra "Estatisticamente reprodutível"]: 201703-reprod
+[Seminário "Estatisticamente reprodutível"]: 201703-reprod
