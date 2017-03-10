@@ -1,0 +1,356 @@
+\everymath{\displaystyle}
+\documentclass{beamer}
+% \documentclass[handout]{beamer}
+
+%\usepackage[pdftex]{color,graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+
+\mode<presentation>
+{
+  % \usetheme{Darmstadt}
+  % \usetheme[hideothersubsections]{Hannover}
+  % \usetheme[hideothersubsections]{Goettingen}
+  \usetheme[hideothersubsections, right]{Berkeley}
+
+  \usecolortheme{seahorse}
+  % \usecolortheme{dolphin}
+  \usecolortheme{rose}
+  % \usecolortheme{orchid}
+
+  \useinnertheme[shadow]{rounded}
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+\mode<handout>{
+  \setbeamercolor{background canvas}{bg=black!5}
+  \usepackage{pgfpages}
+  \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm, landscape]
+}
+
+\usepackage[brazilian]{babel}
+% or whatever
+
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+% or whatever
+
+\usepackage{times}
+%\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+
+\title[Estatística na Pesquisa] % (optional, use only with long paper titles)
+{Estatisticamente reprodutível}
+
+% \subtitle
+% {Um alerta sobre reprodutibilidade na pesquisa} % (optional)
+
+\author%[] % (optional, use only with lots of authors)
+{Felipe Figueiredo}% \and S.~Another\inst{2}}
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[Bio-Manguinhos] % (optional, but mostly needed)
+{Laboratório de Tecnologia Virológica
+}
+  % \inst{1}%
+  % Department of Computer Science\\
+  % University of Somewhere
+  % \and
+  % \inst{2}%
+  % Department of Theoretical Philosophy\\
+  % University of Elsewhere}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date%[] % (optional)
+{10/03/2017}
+
+% \subject{Talks}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+\pgfdeclareimage[height=1.6cm]{university-logo}{logo}
+\logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+%\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Sumário}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+% \beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% \begin{frame}{Sumário}
+%   \tableofcontents
+%   % You might wish to add the option [pausesections]
+% \end{frame}
+
+
+%% Template
+% \section{}
+
+% \subsection{}
+
+% \begin{frame}{}
+%   \begin{itemize}
+%   \item 
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%   \begin{columns}
+%     \begin{column}{5cm}
+%     \end{column}
+%     \begin{column}{5cm}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+% \begin{frame}{}
+%   \includegraphics[height=0.4\textheight]{file1}
+%   \includegraphics[height=0.4\textheight]{file2}
+%   \includegraphics[height=0.4\textheight]{file3}
+%   \begin{figure}
+%     \caption{}
+%   \end{figure}
+% \end{frame}
+
+% \begin{frame}{}
+%   \begin{definition}
+%   \end{definition}
+%   \begin{example}
+%   \end{example}
+%   \begin{block}{Exercício}
+%   \end{block}
+% \end{frame}
+
+\begin{frame}{Análise estatística}
+  \begin{center}
+    {\bf O que é e para que serve}
+  \end{center}
+\end{frame}
+
+\begin{frame}{A importância da estatística}
+  \begin{itemize}
+  \item Encontrar respostas (aproximadamente) corretas
+  \item Garantir reprodutibilidade exigida pelo Método Científico
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+  \begin{block}{}
+    Se você torturar os dados o suficiente, eles confessarão o que você quiser.
+  \end{block}
+\hfill Ronald H. Coase (1982)
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Perguntas frequentes}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \includegraphics[width=\textwidth]{Imagens/pergunta1}
+
+    Qual é a cor deste vestido?
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \includegraphics[width=.7\textwidth]{Imagens/pergunta2}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{A pergunta mais frequente}
+    Tenho estes dados... o que posso descobrir com eles?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{}
+    Chamar o estatístico depois que o experimento está concluído é chamá-lo para um exame post-mortem...
+
+\bigskip
+\uncover<2>{talvez ele possa lhe dizer de que o experimento morreu.}
+  \end{block}
+\hfill Sir Ronald Fisher (1938)
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Reprodutibilidade}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  1500 cientistas responderam a uma pesquisa sobre reprodutibilidade
+
+\includegraphics[width=\textwidth]{Imagens/reprod-nature3}
+
+  \vfill
+  \begin{center}
+    (Nature, 2016)
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+
+    \begin{columns}
+      \begin{column}{5cm}
+        \includegraphics[width=\textwidth]{Imagens/reprod-nature1}
+
+$>70\%$ não conseguiram reproduzir algum experimento de algum outro grupo
+      \end{column}
+      \begin{column}{5cm}
+        \includegraphics[width=\textwidth]{Imagens/reprod-nature2}
+
+$>50\%$ não conseguiram reproduzir algum experimento de seu próprio grupo
+      \end{column}
+    \end{columns}
+  \end{center}
+
+  \vfill
+  \begin{center}
+    (Nature, 2016)
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Principais causas?}
+    \begin{itemize}
+    \item Relatos seletivos
+    \item Pressão para publicar
+    \item Baixo poder estatístico, ou análise inadequada
+    \end{itemize}
+  \end{block}
+
+  \vfill
+  \begin{center}
+    (Nature, 2016)
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Problemas}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Métodos mal documentados...}
+  \begin{center}
+    \includegraphics[width=\textwidth]{Imagens/Vasilevsky}
+
+  \end{center}
+\end{frame}
+
+\begin{frame}{... podem levar a erros metodológicos}
+  \begin{center}
+    \includegraphics[width=\textwidth]{Imagens/Baggerly}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Erros de interpretação...}
+  \begin{center}
+    \includegraphics[width=.95\textwidth]{Imagens/Nature-pvalor}
+  \end{center}
+\end{frame}
+
+\begin{frame}{... podem levar a conclusões erradas}
+  \begin{center}
+    \includegraphics[width=.95\textwidth]{Imagens/Ioannidis}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Intuição pode ser armadilha}
+  \begin{block}{}
+    A combinação de um punhado de dados e um desejo ardente por uma resposta não garante que uma resposta razoável pode ser extraída de um conjunto de dados
+  \end{block}
+\hfill John W. Tukey (1986)
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Soluções?}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Novo panorama}
+  \begin{itemize}{}
+  \item Diversos journals têm implementado critérios para descrição de métodos e compartilhamento de dados.
+  \item Painéis e comitês mais rigorosos
+  \item Farmacêuticas prometem disponibilizar dados de ensaios clínicos
+  \item Software desenvolvido cada vez mais aberto
+%   \item Análise de dados em duas etapas
+%     \begin{itemize}
+%     \item Exploratória
+% %    \item Planejamento das replicações
+%     \item Confirmatória
+%     \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Como melhorar a reprodutibilidade?}
+    De acordo com o estudo da Nature
+    \begin{itemize}
+    \item Melhor compreensão de Estatística
+    \item Desenhos experimentais mais robustos
+    \item Melhor supervisão/orientação
+    \end{itemize}
+  \end{block}
+
+  \vfill
+  \begin{center}
+    (Nature, 2016)
+  \end{center}
+\end{frame}
+
+\begin{frame}{Acima de tudo...}
+  \begin{center}
+    {\bf Auto-crítica e bom senso}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Resumo}
+  Para aumentar a chance de reprodutibilidade na Pesquisa:
+  \begin{itemize}
+  \item Compreensão das aplicações (e limitações!) dos métodos estatísticos
+  \item Equipes multidisciplinares e feedback
+  \item Planejamento prévio
+  \item Boas práticas de documentação
+  \end{itemize}
+\end{frame}
+
+\end{document}
